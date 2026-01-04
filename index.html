@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>হোল্ডিং তথ্য যাচাই</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0b7d3e;
+  --secondary:#2ecc71;
+  --bg:#eef3f6;
+}
+
+body{
+  margin:0;
+  font-family:"Noto Serif Bengali", serif;
+  background:var(--bg);
+  color:#1f2937;
+}
+
+/* Header */
+.header{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:18px 12px;
+}
+.header-inner{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo img{
+  width:52px;
+}
+.header-text{
+  text-align:center;
+  flex:1;
+}
+.header-text h1{
+  margin:0;
+  font-size:24px;
+}
+.header-text p{
+  margin:4px 0 0;
+  font-size:15px;
+}
+
+/* Card */
+.card{
+  max-width:520px;
+  margin:30px auto;
+  background:#fff;
+  border-radius:18px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:22px;
+}
+
+.card p{
+  font-size:16px;
+  line-height:1.6;
+}
+
+.qr img{
+  width:220px;
+  margin:20px 0;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  background:var(--primary);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:30px;
+  font-size:16px;
+  text-decoration:none;
+}
+
+/* Responsive */
+@media(max-width:520px){
+  .header-text h1{font-size:20px;}
+  .qr img{width:180px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo"><img src="https://gedkp.gov.bd/wp-content/uploads/2022/03/155-1559388_bangladesh-government-logo-png-bangladesh-govt-logo-png-150x150.jpg"></div>
+
+    <div class="header-text">
+      <h1>১৪ নং চতরা ইউনিয়ন পরিষদ</h1>
+      <p>পীরগঞ্জ, রংপুর</p>
+    </div>
+
+    <div class="logo"><img src="https://gedkp.gov.bd/wp-content/uploads/2022/03/155-1559388_bangladesh-government-logo-png-bangladesh-govt-logo-png-150x150.jpg"></div>
+  </div>
+</div>
+
+<!-- QR Card -->
+<div class="card">
+  <h2>হোল্ডিং তথ্য দেখুন</h2>
+  <p>
+    এই QR কোড স্ক্যান করে  
+    আপনার হোল্ডিং ট্যাক্স ও বিস্তারিত তথ্য দেখুন।
+  </p>
+
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=details.html">
+  </div>
+
+  <p>অথবা নিচের বাটনে ক্লিক করুন</p>
+  <a href="details.html" class="btn">হোল্ডিং তথ্য দেখুন</a>
+</div>
+
+</body>
+</html>

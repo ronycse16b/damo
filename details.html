@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>হোল্ডিং তথ্য যাচাই</title>
+
+<style>
+  :root{
+    --primary:#0b7d3e;
+    --secondary:#2ecc71;
+    --danger:#e53935;
+    --bg:#f2f4f6;
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:"Noto Sans Bengali", Arial, sans-serif;
+    color:#222;
+  }
+
+  /* Header */
+  .header{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:#fff;
+    padding:18px 12px;
+    text-align:center;
+  }
+  .header h1{
+    margin:0;
+    font-size:20px;
+    font-weight:600;
+  }
+  .header p{
+    margin:4px 0 0;
+    font-size:14px;
+    opacity:.95;
+  }
+
+  /* Notice */
+  .notice{
+    background:#fff7e6;
+    border-bottom:1px solid #ffd591;
+    padding:8px 0;
+    overflow:hidden;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  .notice span{
+    display:inline-block;
+    white-space:nowrap;
+    padding-left:100%;
+    animation:scrollText 18s linear infinite;
+    font-size:14px;
+    color:#ad6800;
+    font-weight:500;
+  }
+  @keyframes scrollText{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-100%);}
+  }
+
+  /* Container */
+  .container{
+    max-width:820px;
+    margin:auto;
+    padding:14px;
+  }
+
+  /* Search */
+  .search-box{
+    display:flex;
+    gap:8px;
+    margin-bottom:12px;
+  }
+  .search-box input{
+    flex:1;
+    padding:11px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+  }
+  .search-box button{
+    padding:11px 16px;
+    border-radius:8px;
+    border:none;
+    background:var(--primary);
+    color:#fff;
+    font-size:15px;
+  }
+
+  /* Buttons */
+  .pay-btn{
+    width:100%;
+    background:#4caf50;
+    color:#fff;
+    border:none;
+    padding:13px;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:10px;
+  }
+
+  .total{
+    border:1px solid var(--danger);
+    color:var(--danger);
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    font-weight:600;
+    margin-bottom:12px;
+    background:#fff;
+  }
+
+  /* Card */
+  .card{
+    background:#fff;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+  }
+
+  /* Info list */
+  .info ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+  }
+  .info li{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:7px 0;
+    border-bottom:1px dashed #ddd;
+    font-size:14.5px;
+  }
+  .info li:last-child{border-bottom:none;}
+  .label{
+    font-weight:600;
+    color:#444;
+  }
+
+  /* Table */
+  .table-wrap{overflow-x:auto;}
+  table{
+    width:100%;
+    min-width:560px;
+    border-collapse:collapse;
+  }
+  th,td{
+    border:1px solid #ddd;
+    padding:9px;
+    text-align:center;
+    font-size:14px;
+  }
+  th{
+    background:var(--primary);
+    color:#fff;
+  }
+
+  /* Responsive */
+  @media(max-width:520px){
+    .info li{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+    .header h1{font-size:18px;}
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>১৪ নং চতরা ইউনিয়ন পরিষদ</h1>
+  <p>পীরগঞ্জ, রংপুর</p>
+</div>
+
+<!-- Scrolling Notice -->
+<div class="notice">
+  <span>
+    📢 সর্বশেষ নোটিশ: নির্ধারিত সময়ের মধ্যে নিয়মিত হোল্ডিং ট্যাক্স বিকাশ/নগদ/রকেটের মাধ্যমে পরিশোধ করুন।
+  </span>
+</div>
+
+<div class="container">
+
+  <!-- Search -->
+  <div class="search-box">
+    <input type="number" placeholder="হোল্ডিং আইডি নাম্বার দিন" id="holdingId">
+    <button onclick="searchHolding()">সার্চ</button>
+  </div>
+
+  <button class="pay-btn">বিকাশের মাধ্যমে পরিশোধ করুন</button>
+
+  <div class="total">আপনার সর্বমোট কর ৮৮০০.০০ টাকা</div>
+
+  <!-- Info -->
+  <div class="card info">
+    <ul>
+        <li><span class="label">নাম:</span> মোঃ মিনার বেগম</li>
+        <li><span class="label">পিতা/স্বামীর নাম:</span> মৃত রহিদুল মন্ডল</li>
+        <li><span class="label">হোল্ডিং নম্বর:</span> ০২২৫</li>
+        <li><span class="label">আইডি নং:</span> ৯৯৮২৬০</li>
+        <li><span class="label">জাতীয়তা:</span> বাংলাদেশী</li>
+        <li><span class="label">ওয়ার্ড নম্বর:</span> ০৯</li>
+        <li><span class="label">ডাকঘর:</span> পীরগঞ্জ</li>
+        <li><span class="label">বর্গফুট:</span> ৫০০</li>
+        <li><span class="label">মোট সদস্য:</span> ২ নারী ১ পুরুষ ১</li>
+        <li><span class="label">গ্রাম/মহল্লা:</span> নয়ার পাড়া</li>
+        <li><span class="label">জেলা:</span> রংপুর</li>
+        <li><span class="label">উপজেলা:</span> পীরগঞ্জ</li>
+        <li><span class="label">কাঁচা ঘর:</span> ১ টি কক্ষ</li>
+        <li><span class="label">ভোটার সংখ্যা:</span> ২</li>
+        <li><span class="label">নলকূপ:</span> ১</li>
+        <li><span class="label">ল্যাট্রিন:</span> ১</li>
+        <li><span class="label">অর্থনৈতিক শ্রেণী:</span> দরিদ্র</li>
+        <li><span class="label">ধার্যকৃত ট্যাক্সের পরিমাণ:</span> ৮২০০</li>
+      </ul>
+  </div>
+
+  <!-- Payment History -->
+  <div class="card">
+    <h3 style="margin:0 0 10px;font-size:16px;">কর পরিশোধের বিবরণ</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ক্রমিক নং</th>
+            <th>তারিখ</th>
+            <th>অর্থ বছর</th>
+            <th>জমা টাকা</th>
+            <th>রশিদ নং</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>১</td>
+            <td>১২-০৭-২০২৪</td>
+            <td>২০২৩-২০২৪</td>
+            <td>৪০০০</td>
+            <td>R-1025</td>
+          </tr>
+          <tr>
+            <td>২</td>
+            <td>১৫-০৬-২০২৫</td>
+            <td>২০২৪-২০২৫</td>
+            <td>৪৮০০</td>
+            <td>R-118৮</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function searchHolding(){
+  const id=document.getElementById("holdingId").value;
+  if(!id){
+    alert("হোল্ডিং আইডি দিন");
+    return;
+  }
+  alert("হোল্ডিং খোঁজা হচ্ছে: "+id);
+}
+</script>
+
+</body>
+</html>
